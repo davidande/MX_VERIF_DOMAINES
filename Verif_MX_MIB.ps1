@@ -4,7 +4,7 @@ Foreach ($Domaine in $Domaines)
         Resolve-DnsName -Name $Domaine -Type MX -DnsOnly |
         Select Name, NameExchange, Preference |
         Where Preference -GT 0 | Sort -Property Preference  |
-        Out-file .\checkMIB.txt -Append
+        Out-file .\CheckMX.txt -Append
     }
 
 
